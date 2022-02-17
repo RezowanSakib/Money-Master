@@ -37,24 +37,25 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 document.getElementById("save-btn").addEventListener("click", function () {
   const saveInput = Number(document.getElementById("save-input").value) / 100;
   const income = getIncome();
-
-  const saveBalance = income * saveInput;
+  const saveBalanceCalc = income * saveInput;
   const remainingBalanceText = document.getElementById("remaing-balance");
+  const previousSavedMoney = document.getElementById("saved-money");
   const expensess = getExpenses();
   const balanceHave = income - expensess;
-  if (saveBalance >= 0 && balanceHave>=0) {
-    if (balanceHave > saveBalance) {
-      const remainingBlance = balanceHave - saveBalance;
+  if (saveBalanceCalc >= 0 && balanceHave >= 0) {
+    if (balanceHave > saveBalanceCalc) {
+      const remainingBlance = balanceHave - saveBalanceCalc;
       remainingBalanceText.innerText = remainingBlance;
-      document.getElementById("saved-money").innerText = saveBalance;
+      previousSavedMoney.innerText = saveBalanceCalc;
     } else {
-      document.getElementById("saved-money").innerText =
-        "you do not have money";
+      previousSavedMoney.innerText = "you do not have money";
       remainingBalanceText.innerText = balanceHave;
     }
-  } else {
+  } else if (balanceHave < saveBalanceCalc) {
+    previousSavedMoney.innerText = "you do not have money";
     remainingBalanceText.innerText = 0;
-    document.getElementById("saved-money").innerText =
-      "input value should be positive";
+  } else {
+    remainingBalanceText.innerText = balanceHave;
+    previousSavedMoney.innerText = "input value should be positive";
   }
 });
