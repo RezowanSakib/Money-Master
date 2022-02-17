@@ -9,16 +9,17 @@
   </head>
   <body>
     <header>
-        <h1  class="text-center h1 mb-5">Money Master</h1>
+        <h1  class="text-center h1 m-5">Income-expenses Calculator</h1>
     </header>
     <div class="container">
         <div class="row align-items-center d-flex justify-content-around">
-          <div class="col-lg-6">
-            <img src="istockphoto-168637625-612x612.jpg" class="img-fluid" alt="Money">
+          <div class="col-lg-6 col-sm-12 ">
+            <img src="money.jpg" class="img-fluid" alt="Money">
           </div>
-          <div class="col-lg-4 bg-light p-4 rounded">
+          <div class="col-lg-4 col-sm-12 bg-light p-4 rounded">
+            <!-- main part -->
            <form action="">
-               
+               <!-- income field -->
                <div>
                  <h2 class="text-center mb-3  h2">Income</h2>
                <div class="mb-5 ms-auto d-flex justify-content-center">
@@ -26,6 +27,8 @@
                 <input id="income" type="number" value="10000">
               </div>  
                </div>
+               <!-- expenses field -->
+               <!-- income-expenses input field -->
                <div>
                  <h2 class="text-center mb-3 h2">Expenses</h2>
                 <div class="d-flex justify-content-center"> <ul >
@@ -45,12 +48,25 @@
                </div>
                
            </form>
-           <div class="d-flex justify-content-center"> <button type="button" id="calculate-btn" class="btn btn-primary btn-lg text-center ">Calculate</button></div>
-          <div class="d-flex justify-content-center"> <div><h2 class="my-3">Total Expenses:  <span id="total-expenses">5500</span> </h2>
-           <h2 class="my-3">Balance:  <span id='balance'>4500</span> </h2></div></div>
-           
-           <div class="d-flex justify-content-center"><div> <span class="h3">save :</span>
-            <input type="number" id="save-input" value="20"><span> % </span><button type="button" id="save-btn" class="btn btn-primary btn-sm">Save</button>
+           <!-- calculate btn -->
+           <div class="d-flex justify-content-center"> <button type="button" id="calculate-btn" class="btn btn-primary btn-lg text-center ">Calculate</button>
+          </div>
+          <!-- income-expenses output field -->
+          <div class="d-flex justify-content-center"> <div>
+            <h2 class="my-3">Total Expenses:  <span id="total-expenses">5500</span> </h2>
+           <h2 class="my-3">Balance:  <span id='balance'>4500</span> </h2>
+          </div>
+          </div>
+           <!-- saving part-->
+           <div class="d-flex justify-content-center">
+             <div> 
+              <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                  <span class="h3">Save :</span>
+                  <input type="number" id="save-input" value="20"><span> % </span><button type="button" id="save-btn" class="btn btn-primary btn-sm">Save</button>
+                </div>
+              </div>
+
             <h2>Saving Amount: <span id="saved-money">2000</span>  </h2>
             <h2>Remaining Balance:  <span id="remaing-balance">2500</span> </h2>
         </div>

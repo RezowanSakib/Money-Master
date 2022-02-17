@@ -1,3 +1,4 @@
+//get your expenses
 function getExpenses() {
   const food = Number(document.getElementById("food").value);
   const rent = Number(document.getElementById("rent").value);
@@ -9,11 +10,12 @@ function getExpenses() {
     return "input value should be positive";
   }
 }
+//get your income
 function getIncome() {
   const income = Number(document.getElementById("income").value);
   return income;
 }
-
+//calculate btn event handling
 document.getElementById("calculate-btn").addEventListener("click", function () {
   const income = getIncome();
   const expenses = getExpenses();
@@ -34,6 +36,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     totalExpensess.innerText = expenses;
   }
 });
+//save btn handling
 document.getElementById("save-btn").addEventListener("click", function () {
   const saveInput = Number(document.getElementById("save-input").value) / 100;
   const income = getIncome();
@@ -42,6 +45,7 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const previousSavedMoney = document.getElementById("saved-money");
   const expensess = getExpenses();
   const balanceHave = income - expensess;
+  //saveing balance is greater than yor balace and 0
   if (saveBalanceCalc >= 0 && balanceHave >= 0) {
     if (balanceHave > saveBalanceCalc) {
       const remainingBlance = balanceHave - saveBalanceCalc;
@@ -51,7 +55,9 @@ document.getElementById("save-btn").addEventListener("click", function () {
       previousSavedMoney.innerText = "you do not have money";
       remainingBalanceText.innerText = balanceHave;
     }
-  } else if (balanceHave < saveBalanceCalc) {
+  }
+  //saveing balance is greater than yor balace
+  else if (balanceHave < saveBalanceCalc) {
     previousSavedMoney.innerText = "you do not have money";
     remainingBalanceText.innerText = 0;
   } else {
